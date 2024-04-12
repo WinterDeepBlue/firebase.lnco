@@ -15,7 +15,7 @@ import path from 'path';
     FirebaseModule.forRoot({
       googleApplicationCredential: path.resolve(
         __dirname,
-        '../lnco-artifacts-firebase-adminsdk-llblk-d3308ac0f5.json',
+        '../key/lnco-artifacts-firebase-adminsdk-llblk-d3308ac0f5.json',
       ),
     }),
     OpsModule,
