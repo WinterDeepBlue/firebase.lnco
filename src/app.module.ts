@@ -6,14 +6,17 @@ import { ConfigModule } from '@nestjs/config';
 
 import { OpsModule } from './ops/ops.module';
 import { FirebaseModule } from 'nestjs-firebase';
+import path from 'path';
 
 @Module({
   imports: [
     AuthorizationModule,
     ConfigModule.forRoot(),
     FirebaseModule.forRoot({
-      googleApplicationCredential:
-        'key/lnco-artifacts-firebase-adminsdk-llblk-d3308ac0f5.json',
+      googleApplicationCredential: path.resolve(
+        __dirname,
+        '../lnco-artifacts-firebase-adminsdk-llblk-d3308ac0f5.json',
+      ),
     }),
     OpsModule,
   ],
