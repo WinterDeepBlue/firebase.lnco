@@ -7,17 +7,17 @@ import { ConfigModule } from '@nestjs/config';
 import { OpsModule } from './ops/ops.module';
 import { FirebaseModule } from 'nestjs-firebase';
 import { HealthModule } from './health/health.module';
-import path from 'path';
 
 @Module({
   imports: [
     AuthorizationModule,
     ConfigModule.forRoot(),
     FirebaseModule.forRoot({
-      googleApplicationCredential: path.resolve(
-        __dirname,
-        '../key/lnco-artifacts-firebase-adminsdk-llblk-d3308ac0f5.json',
-      ),
+      googleApplicationCredential: {
+        projectId: process.env.PROJECT_ID,
+        privateKey: process.env.FIREBASE_PK,
+        clientEmail: process.env.CLIENT_EMAIL,
+      },
     }),
     OpsModule,
     HealthModule,
