@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 
 import { OpsModule } from './ops/ops.module';
 import { FirebaseModule } from 'nestjs-firebase';
+import { HealthModule } from './health/health.module';
 import path from 'path';
 
 @Module({
@@ -19,6 +20,7 @@ import path from 'path';
       ),
     }),
     OpsModule,
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
